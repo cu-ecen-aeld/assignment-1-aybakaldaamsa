@@ -5,7 +5,7 @@
 
 #check if the number of arguments is correcrt
 
-if  [ "$#" -ne 2 ]
+if  [ $# -ne 2 ]
 then
    echo "Erro: Please porvide a correct number of arguments"
    exit 1
@@ -32,4 +32,3 @@ fi
 
 echo "The File $writefile created successfully with content: $writestr"
 
-exit 0

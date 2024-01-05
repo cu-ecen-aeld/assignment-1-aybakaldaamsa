@@ -6,7 +6,7 @@
 
 #check if the number of arguments is correcrt
 
-if  [ "$#" -ne 2 ]
+if  [ $# -ne 2 ]
 then
 
    echo "Erro: Please porvide a correct number of arguments"
@@ -19,11 +19,6 @@ filesdir="$1"
 searchstr="$2"
 
 #check if the number of arguments is correcrt
-if [ -z "$filesdir" ] || [ -z "$searchstr" ]
-then
-   echo "Error:Arguments cannot be empty"
-   exit 1 
-fi
 
 if [ ! -d "$filesdir" ]
 then 
@@ -33,7 +28,6 @@ fi
 
 num_files=$(find "$filesdir" -type f| wc -l)
 num_matching_lines=$(grep -r "$searchstr" "$filesdir" | wc -l )
-echo "The number of files are $num_files and the number of matching lines are $num_matching_lines"
+echo "the number of files in $num_files and the number of matching lines are $num_matching_lines "
 
-exit 0
 
